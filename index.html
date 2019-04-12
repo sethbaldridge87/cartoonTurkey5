@@ -1,0 +1,489 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Cartoon Turkey 5</title>
+</head>
+<body>
+<div id="cartoon">
+	<div id="turkey">
+		<div id="head">
+			<div id="right_eye" class="eye">
+				<div class="pupil"></div>
+			</div>
+			<div id="left_eye" class="eye">
+				<div class="pupil"></div>
+			</div>
+			<div id="beak"></div>
+			<div id="gobbler"></div>
+		</div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div class="feather"><div class="feather_line"></div></div>
+		<div id="body"></div>
+		<div id="right_thigh" class="thighs"></div>
+		<div id="left_thigh" class="thighs"></div>
+		<div id="right_shin" class="shins"></div>
+		<div id="left_shin" class="shins"></div>
+	</div>
+	<div id="right_foot" class="feet"></div>
+	<div id="left_foot" class="feet"></div>
+</div>
+<style>
+	#cartoon {
+		position: relative;
+		transform: scale(.25);
+	}
+	#turkey {
+		position: absolute;
+		left: 370px;
+		top: 320px;
+	}
+	#head {
+		position: absolute;
+		height: 350px;
+		width: 350px;
+		z-index: 1;
+		border: 3px solid black;
+		background-color:#732000;
+		border-radius: 50%;
+		box-shadow:inset -55px 0 4px 5px #4E1D01;
+	}
+	.eye {
+		position: absolute;
+		height: 90px;
+		width: 90px;
+		z-index: 1;
+		border: 3px solid black;
+		border-radius: 50%;
+		background-color: #fff;
+		top: 80px;
+	}
+	#left_eye {
+		left: 70px;
+		animation-name: bigLeft;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+	}
+	#right_eye {
+		left: 180px;
+		animation-name: bigRight;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+	}
+	@keyframes bigLeft {
+		0%   {left: 70px;}
+		12%  {left: 70px;}
+		15%  {left: 20px; height: 150px; width: 150px;}
+		50%  {left: 70px; height: 90px; width: 90px;}
+		100% {left: 70px; height: 90px; width: 90px;}
+	}
+	@keyframes bigRight {
+		0%   {left: 180px;}
+		12%  {left: 180px;}
+		15%  {left: 180px; height: 150px; width: 150px;}
+		50%  {left: 180px; height: 90px; width: 90px;}
+		100% {left: 180px; height: 90px; width: 90px;}
+	}
+	.pupil {
+		height: 25px;
+		width: 25px;
+		background-color: #000;
+		border-radius: 50%;
+		margin-top: 30px;
+		margin-left: 30px;
+		animation-name: bigPupil;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+	}
+	@keyframes bigPupil {
+		0%   {margin-top: 30px;	margin-left: 30px;}
+		12%  {margin-top: 30px;	margin-left: 30px;}
+		15%  {margin-left: 60px; margin-top: 60px;}
+		50%  {margin-top: 30px; margin-left: 30px;}
+		100% {margin-top: 30px; margin-left: 30px;}
+	}
+	#beak {
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: 50px solid transparent;
+		border-right: 50px solid transparent;
+		border-top: 160px solid orange;
+		border-radius: 50%;
+		z-index: 3;
+		top: 170px;
+		left: 125px;
+	}
+	#gobbler {
+		position: absolute;
+		height: 100px;
+		width: 60px;
+		background-color: red;
+		border-radius: 0 100% 50% 80%;
+		top: 200px;
+		left: 210px;
+		transform: rotate(-15deg);
+	}
+	.feather {
+		position: absolute;
+		width: 600px;
+		height: 70px;
+		border: 3px solid black;
+		background-color: orange;
+		background-image: linear-gradient(to right, yellow, red, brown);
+		border-radius: 500% 200% 200% 500%;
+		z-index: -5
+	}
+	.feather:nth-of-type(2) {
+		transform: rotate(-15deg);
+		left: -350px;
+		top: 500px;
+		animation-name: featherSpin1;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+	}
+	@keyframes featherSpin1 {
+
+		0%   {left: -350px; top: 500px;}
+		2.5%   {left: -350px; top: 500px;}
+		40% {opacity: 1;}
+		50% {left: -1710px; top: 900px; opacity: 0;}
+		51% {left: -160px; top: 450px;}
+		100% {left: -350px; top: 500px; opacity:1;}
+	}
+	.feather:nth-of-type(3) {
+		transform: rotate(-5deg);
+		left: -370px;
+    	top: 410px;
+		animation-name: featherSpin2;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+	}
+	@keyframes featherSpin2 {
+		0%   {left: -370px;	top: 410px;}
+		5%   {left: -370px;	top: 410px;}
+		40% {opacity: 1;}
+		50% {left: -1790px; top: 530px; opacity: 0;}
+		51% {left: -170px; top: 395px;}
+		100% {left: -370px;	top: 410px;}
+	}
+	.feather:nth-of-type(4) {
+		transform: rotate(5deg);
+		left: -370px;
+    	top: 320px;
+		animation-name: featherSpin3;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+	}
+	@keyframes featherSpin3 {
+		0%   {left: -370px;	top: 320px;}
+		7.5%  {left: -370px; top: 320px;}
+		40% {opacity: 1;}
+		50% {left: -1920px; top: 160px; opacity: 0;}
+		51% {left: -170px; top: 340px;}
+		100% {left: -370px;	top: 320px;}
+	}
+	.feather:nth-of-type(5) {
+		transform: rotate(15deg);
+		left: -370px;
+    	top: 230px;
+		animation-name: featherSpin4;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+	}
+	@keyframes featherSpin4 {
+		0%   {left: -370px; top: 230px;}
+		10%  {left: -370px; top: 230px;}
+		40% {opacity: 1;}
+		50% {left: -1950px; top: -80px; opacity: 0;}
+		51% {left: -180px; top: 280px;}
+		100% {left: -370px; top: 230px;}
+	}
+	.feather:nth-of-type(6) {
+		transform: rotate(30deg);
+		left: -340px;
+   		top: 135px;
+		animation-name: featherSpin5;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+	}
+	@keyframes featherSpin5 {
+		0%   {left: -340px; top: 135px;}
+		12.5%  {left: -340px; top: 135px;}
+		40% {opacity: 1;}
+		50% {left: -1770px; top: -295px; opacity: 0;}
+		51% {left: -180px; top: 225px;}
+		100% {left: -340px; top: 135px;}
+	}
+	.feather:nth-of-type(7) {
+		transform: rotate(45deg);
+		left: -268px;
+    	top: 85px;
+		animation-name: featherSpin6;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+	}
+	@keyframes featherSpin6 {
+		0%   {left: -268px; top: 85px;}
+		15%  {left: -268px; top: 85px;}
+		40% {opacity: 1;}
+		50% {left: -1408px; top: -585px; opacity: 0;}
+		51% {left: -158px; top: 185px;}
+		100% {left: -268px; top: 85px;}
+	}
+	.feather:nth-of-type(8) {
+		transform: rotate(70deg);
+		left: -195px;
+    	top: 35px;
+		animation-name: featherSpin7;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+	}
+	@keyframes featherSpin7 {
+		0%   {left: -195px; top: 35px;}
+		17.5%  {left: -195px; top: 35px;}
+		40% {opacity: 1;}
+		50% {left: -655px; top: -895px; opacity: 0;}
+		51% {left: -155px; top: 175px;}
+		100% {left: -195px; top: 35px;}
+	}
+	.feather:nth-of-type(9) {
+		transform: rotate(85deg);
+		left: -125px;
+    	top: 15px;
+		animation-name: featherSpin8;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+	}
+	@keyframes featherSpin8 {
+		0%   {left: -125px; top: 15px;}
+		20%  {left: -125px; top: 15px;}
+		40% {opacity: 1;}
+		50% {left: -225px; top: -1035px; opacity: 0;}
+		51% {left: -125px; top: 165px;}
+		100% {left: -125px; top: 15px;}
+	}
+	.feather:nth-of-type(10) {
+		transform: rotate(100deg);
+		left: -40px;
+    	top: 0px;
+		animation-name: featherSpin9;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+	}
+	@keyframes featherSpin9 {
+		0%   {left: -40px; top: 0px;}
+		22.5%  {left: -40px; top: 0px;}
+		40% {opacity: 1;}
+		50% {left: 110px; top: -1040px; opacity: 0;}
+		51% {left: -80px; top: 170px;}
+		100% {left: -40px; top: 0px;}
+	}
+	.feather:nth-of-type(11) {
+		transform: rotate(115deg);
+		left: 50px;
+    	top: 35px;
+		animation-name: featherSpin10;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+	}
+	@keyframes featherSpin10 {
+		0%   {left: 50px; top: 35px;}
+		25%  {left: 50px; top: 35px;}
+		40% {opacity: 1;}
+		50% {left: 440px; top: -955px; opacity: 0;}
+		51% {left: -30px; top: 195px;}
+		100% {left: 50px; top: 35px;}
+	}
+	.feather:nth-of-type(12) {
+		transform: rotate(135deg);
+		left: 170px;
+    	top: 45px;
+		animation-name: featherSpin11;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+	}
+	@keyframes featherSpin11 {
+		0%   {left: 170px; top: 45px;}
+		27.5%  {left: 170px; top: 45px;}
+		40% {opacity: 1;}
+		50% {left: 1140px; top: -795px; opacity: 0;}
+		51% {left: 0px; top: 205px;}
+		100% {left: 170px; top: 45px;}
+	}
+	.feather:nth-of-type(13) {
+		transform: rotate(150deg);
+		left: 290px;
+    	top: 95px;
+		animation-name: featherSpin12;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+	}
+	@keyframes featherSpin12 {
+		0%   {left: 290px; top: 95px;}
+		30%  {left: 290px; top: 95px;}
+		40% {opacity: 1;}
+		50% {left: 1450px; top: -445px; opacity: 0;}
+		51% {left: 30px; top: 235px;}
+		100% {left: 290px; top: 95px;}
+	}
+	.feather:nth-of-type(14) {
+		transform: rotate(165deg);
+		left: 370px;
+    	top: 195px;
+		animation-name: featherSpin13;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+	}
+	@keyframes featherSpin13 {
+		0%   {left: 370px; top: 195px;}
+		32.5%  {left: 370px; top: 195px;}
+		40% {opacity: 1;}
+		50% {left: 1550px; top: -45px; opacity: 0;}
+		51% {left: 70px; top: 265px;}
+		100% {left: 370px; top: 195px;}
+	}
+	.feather:nth-of-type(15) {
+		transform: rotate(170deg);
+		left: 370px;
+    	top: 290px;
+		animation-name: featherSpin14;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+	}
+	@keyframes featherSpin14 {
+		0%   {left: 370px; top: 290px;}
+		35%  {left: 370px; top: 290px;}
+		40% {opacity: 1;}
+		50% {left: 1680px; top: 170px; opacity: 0;}
+		51% {left: 70px; top: 340px;}
+		100% {left: 370px; top: 290px;}
+	}
+	.feather:nth-of-type(16) {
+		transform: rotate(185deg);
+		left: 370px;
+    	top: 410px;
+		animation-name: featherSpin15;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+	}
+	@keyframes featherSpin15 {
+		0%   {left: 370px; top: 410px;}
+		37.5%  {left: 370px; top: 410px;}
+		40% {opacity: 1;}
+		50% {left: 1700px; top: 510px; opacity: 0;}
+		51% {left: 70px; top: 380px;}
+		100% {left: 370px; top: 410px;}
+	}
+	.feather:nth-of-type(17) {
+		transform: rotate(195deg);
+		left: 350px;
+		top: 510px;
+		animation-name: featherSpin16;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+	}
+	@keyframes featherSpin16 {
+		0%   {left: 350px; top: 510px;}
+		40%  {left: 350px; top: 510px;}
+		40% {opacity: 1;}
+		50% {left: 1740px; top: 800px; opacity: 0;}
+		51% {left: 70px; top: 440px;}
+		100% {left: 350px; top: 510px;}
+	}
+	.feather_line {
+		top: 32px;
+		position: absolute;
+		width: 530px;
+		left: 120px;
+		z-index: 10;
+		border: 3px solid black;
+		background-color: black;
+		border-radius: 50%;
+	}
+	#body {
+		position: absolute;
+		top: 100px;
+		height: 500px;
+		width: 500px;
+		border: 3px solid black;
+		background-color:#732000;
+		border-radius: 50%;
+		box-shadow:inset -55px 0 4px 5px #4E1D01;
+	}
+	.thighs {
+		position:absolute;
+		height: 200px;
+		width: 40px;
+		background-color: orange;
+		z-index: -1;
+		border-bottom-left-radius: 20px;
+    	border-bottom-right-radius: 20px;
+	}
+	#right_thigh {
+		top: 480px;
+		left: 350px;
+		transform: rotate(-45deg);
+	}
+	#left_thigh {
+		top: 480px;
+		left: 115px;
+		transform: rotate(45deg);
+	}
+	.shins {
+		position:absolute;
+		height: 200px;
+		width: 40px;
+		background-color: orange;
+		z-index: 2;
+		border-bottom-left-radius: 20px;
+    	border-bottom-right-radius: 20px;
+		border-top-left-radius: 20px;
+    	border-top-right-radius: 20px;
+	}
+	#right_shin {
+		top: 615px;
+		left: 385px;
+		transform: rotate(15deg);
+	}
+	#left_shin {
+		top: 615px;
+		left: 80px;
+		transform: rotate(-15deg);
+	}
+	.feet {
+		position:absolute;
+		top: 1040px;
+		height: 150px;
+		width: 40px;
+		background-color: orange;
+		z-index: -2;
+		border-bottom-left-radius: 20px;
+    	border-bottom-right-radius: 20px;
+		border-top-left-radius: 20px;
+    	border-top-right-radius: 20px;
+		transform: rotate(90deg);
+	}
+	#right_foot {
+		left: 790px;
+	}
+	#left_foot {
+		left: 415px;
+	}
+</style>
+</body>
+</html>
